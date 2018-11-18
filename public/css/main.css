@@ -1,0 +1,13 @@
+/* It doesn't make sense to minify this */
+th[data-sortable] {
+    cursor: pointer;
+}
+
+.table-sortableItem {
+    display: inline-block;
+    padding-left: 3px;
+    transition: transform .3s;
+}
+.table-sortableItem_rotated {
+    transform: rotateX(180deg);
+}
