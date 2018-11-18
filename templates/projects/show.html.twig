@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Project #{{ project.id }}{% endblock %}
+
+{% block body %}
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">{{ project.subject }} #{{ project.id }}</h4>
+        <p>{{ project.description }}</p>
+        <hr>
+        <div class="row">
+            <div class="col-sm">Started <strong>{{ project.startdate|date('Y-m-d') }}</strong></div>
+            <div class="col-sm text-right">Last updated on <strong>{{ project.updatedon|date('Y-m-d H:i:s') }}</strong></div>
+        </div>
+    </div>
+{% endblock %}

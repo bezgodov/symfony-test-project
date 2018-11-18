@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}Parsing projects{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col text-center">
+            {% if isPost %}
+                <h2>Projects parsed: {{ parsedProjects|length }}</h2>
+                {% if parsedProjects|length > 0 %}
+                    <table class="table table-striped text-left">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Subject</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for project in parsedProjects %}
+                                <tr>
+                                    <td>{{ project.id }}</td>
+                                    <td>{{ project.subject }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            {% endif %}
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
